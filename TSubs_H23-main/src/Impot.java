@@ -21,4 +21,19 @@ class Impot {
     }
 
     //TODO 4
+    public double getRevenuAnnuel() {
+        return revenuAnnuel;
+    }
+    public void setRevenuAnnuel(double revenuAnnuel) {
+        this.revenuAnnuel = revenuAnnuel;
+    }
+    public double getTauxImposition() {
+        return tauxImposition;
+    }
+    public void setTauxImposition(double tauxImposition) {
+        this.tauxImposition = tauxImposition;
+    }
+    public double calculeImpot(){
+        return revenuAnnuel*tauxImposition;
+    }
 }
