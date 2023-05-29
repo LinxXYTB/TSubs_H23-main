@@ -18,7 +18,7 @@ class Chat extends Animal {
     }
 
     public void faireDuBruit() {
-        System.out.print("woof woof");
+        System.out.println("woof woof");
     }
     public boolean getInterieur(){
         return estInterieur;

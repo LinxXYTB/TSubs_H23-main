@@ -14,7 +14,7 @@ class Chien extends Animal {
     }
 
     public void faireDuBruit() {
-        System.out.print("woof woof");
+        System.out.println("woof woof");
     }
     public String getRace() {
         return race;
