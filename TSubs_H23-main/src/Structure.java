@@ -10,7 +10,11 @@ class Structure {
 
     // Méthode pour vérifier si la liste est vide
     public boolean estVide() {
-        return tete == null;
+        if (tete == null) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     // Méthode pour ajouter un élément à la fin de la liste
@@ -47,5 +51,15 @@ class Structure {
             courant = courant.precedent;
         }
         System.out.println();
+    }
+
+    public static class Noeud extends Structure {
+       Noeud suivant;
+       Noeud precedent;
+       int valeur;
+
+       public Noeud(int valeur){
+            this.valeur = valeur;
+       }
     }
 }
