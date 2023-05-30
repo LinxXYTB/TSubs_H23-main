@@ -6,37 +6,29 @@ class ExempleExceptionsPersonnalisees {
     //TODO 7
 
     public void setValeur(int valeur) {
-        this.valeur = valeur;
         try {
             effectuerOperation();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return;
         }
+        this.valeur = valeur;
     }
 
     // Méthode pour effectuer une opération
-    public void effectuerOperation() throws OperationNonAutoriseeException {
+    public void effectuerOperation() throws OperationNonAutoriseeException, ValeurHorsLimiteException {
         // Condition de vérification pour l'opération
         boolean condition = true;
-
-        if (valeur > 100 || valeur < 1) {
-            condition = false;
-        }
 
         if (!condition) {
             throw new OperationNonAutoriseeException("L'opération n'est pas autorisée.");
         }
 
         // Logique de l'opération
-    }
-}
-class OperationNonAutoriseeException extends Exception {
+        // Il n'y a pas vraiment d'operation non autorisee, car c'est deja entre 1 et 100, donc on ne peut pas le diviser par 0 et on peut fair le reste des operations
 
-    public OperationNonAutoriseeException() {
-        super();
-    }
-  
-    public OperationNonAutoriseeException(String s) {
-        super(s);
+        if (valeur > 100 || valeur < 1) {
+            throw new ValeurHorsLimiteException("La valeur doit etre entre 1 et 100");
+        }
     }
 }
